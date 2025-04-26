@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Quiz</title>
+</head>
+<body>
+    <h1>Add Quiz</h1>
+    <form method="POST" action="/quiz/add">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        <label for="num_questions">Number of Questions:</label>
+        <input type="number" id="num_questions" name="num_questions" required>
+        <label for="quiz_date">Quiz Date:</label>
+        <input type="date" id="quiz_date" name="quiz_date" required>
+        <button type="submit">Add Quiz</button>
+    </form>
+</body>
+</html>
