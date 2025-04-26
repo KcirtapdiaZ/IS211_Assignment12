@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS student (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS quiz (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    subject TEXT NOT NULL,
+    num_questions INTEGER NOT NULL,
+    quiz_date TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS result (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER NOT NULL,
+    quiz_id INTEGER NOT NULL,
+    score INTEGER NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES student (id),
+    FOREIGN KEY (quiz_id) REFERENCES quiz (id)
+);
