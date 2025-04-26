@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Quiz Result</title>
+</head>
+<body>
+    <h1>Add Quiz Result</h1>
+    <form method="POST" action="/results/add">
+        <label for="student_id">Student:</label>
+        <select id="student_id" name="student_id" required>
+            {% for student in students %}
+            <option value="{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</option>
+            {% endfor %}
+        </select>
+        <label for="quiz_id">Quiz:</label>
+        <select id="quiz_id" name="quiz_id" required>
+            {% for quiz in quizzes %}
+            <option value="{{ quiz.id }}">{{ quiz.subject }}</option>
+            {% endfor %}
+        </select>
+        <label for="score">Score:</label>
+        <input type="number" id="score" name="score" required>
+        <button type="submit">Add Result</button>
+    </form>
+</body>
+</html>
