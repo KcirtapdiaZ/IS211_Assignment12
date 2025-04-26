@@ -38,6 +38,11 @@ def init_db():
     except Exception as e:
         print(f"Error initializing database: {e}")
 
+@app.route('/')
+def index():
+    """Redirect to the login page when visiting the root URL."""
+    return redirect(url_for('login'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
